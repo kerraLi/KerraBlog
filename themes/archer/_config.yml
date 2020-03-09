@@ -1,6 +1,6 @@
 # ========== Profile ========== #
 # avatar
-avatar: /avatar/Avatar.jpg
+avatar: https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/zknow_blog/Avatar.jpg
 # author name
 author: 老袁
 # signature
@@ -30,7 +30,7 @@ social:
   rss: 
 # friends
 friends:
-  友情链接: //www.bladewan.com
+  我爱西红柿: //www.bladewan.com
   friendB: 
   friendC: 
 about:

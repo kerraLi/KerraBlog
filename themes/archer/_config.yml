@@ -51,7 +51,7 @@ main_title: 老袁的乱七八糟
 # subtitle
 subtitle: 记录老袁乱七八糟的生活
 # site haeder image
-site_header_image: '/intro/index-bg.jpg'
+site_header_image: 'https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/zknow_blog/index-bg.jpg'
 # post haeder image
 post_header_image: '/intro/post-bg.jpg'
 # 404 image

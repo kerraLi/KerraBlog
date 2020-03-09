@@ -1,14 +1,14 @@
 # ========== Profile ========== #
 # avatar
-avatar: /avatar/Misaka.jpg
+avatar: /avatar/Avatar.jpg
 # author name
-author: fi3ework
+author: 老袁
 # signature
-signature: witness me
+signature: 老袁的乱七八糟
 # SNS (you can custom the order)
 social:
-  email: 12345@qq.com
-  github: //github.com/fi3ework
+  email: 535875999@qq.com
+  github: //github.com/MrYuanZhen
   # wechat and qq should be a path of qr-code image
   wechat: /assets/example_qr.png
   qq: 
@@ -30,8 +30,8 @@ social:
   rss: 
 # friends
 friends:
-  friendA: //www.baidu.com
-  friendB: //www.google.com
+  友情链接: //www.bladewan.com
+  friendB: 
   friendC: 
 about:
   enable: true
@@ -39,16 +39,17 @@ about:
 
 # ========== Site ========== #
 # title of the site (good for SEO)
-SEO_title: fi3ework's Studio
+SEO_title: 老袁的乱七八糟
 # keywords for site (good for SEO)
 SEO_keywords:
-  - hexo
-  - 'hexo-theme'
-  - 'hexo-blog'
+  - 生活
+  - 技术
+  - 机车
+  - 杂七杂八
 # main title shown in header image
-main_title: fi3ework's Studio.
+main_title: 老袁的乱七八糟
 # subtitle
-subtitle: it's better to burn out than to fade away
+subtitle: 记录老袁乱七八糟的生活
 # site haeder image
 site_header_image: '/intro/index-bg.jpg'
 # post haeder image

@@ -23,15 +23,12 @@ categories:
 
 <br/>
 
-# 正文
-
-## 获取当前Prometheus所监控集群的每秒刮擦的样本数量
+# 获取当前Prometheus所监控集群的每秒刮擦的样本数量
 
 * 首先需要拿到Prometheus每一种Job平均收集的样本数量，可以通过以下Promql查看，这里截图以容器云平台Rancher为例：
 
 >公式：<br/>
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avg(scrape_samples_scraped) by (job)
->
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avg(scrape_samples_scraped) by (job)  
 >解释：
 > * scrape_samples_scraped 这个metrics代表Prometheus被刮取的样本数；
 > * avg即为平均数；
@@ -55,10 +52,9 @@ categories:
 
 * 上面拿到了每个job在1秒中刮取的样本数量，这时候只需要将所有job每秒获得样本数量相加，即可拿到当前Prometheus所监控集群的每秒刮擦的样本数量
 
-> 公式：<br/>
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum(scrape_samples_scraped) / 60
-> 
-> 解释：
+> 公式:  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum(scrape_samples_scraped) / 60  
+> 解释:
 > * sum 即为计算总数函数；
 
 ![avater](https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Prometheus%E6%AF%8F%E7%A7%92%E6%8B%89%E5%8F%96%E6%80%BB%E6%95%B0.jpg)
@@ -88,8 +84,7 @@ categories:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在已经知道了每一条样本的磁盘使用量和每秒钟Prometheus刮取的样本数量，只需要知道存储时间，即可计算出磁盘使用量
 
 > 假设存储时间为1小时，每秒刮取样本数量为400，那么公式如下：
->
-> 存储时间(3600s) * 每秒刮取样本数量(400) * 每条样本大小(2 bytes) ≈ 2.7 MB
+> * 存储时间(3600s) * 每秒刮取样本数量(400) * 每条样本大小(2 bytes) ≈ 2.7 MB
 
 <br/>
 
@@ -108,8 +103,7 @@ categories:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现在获取到了样本数据块block的时间，每秒刮取样本的数量和每条样本使用内存的大小，即可使用下面公式计算Prometheus内存使用量
 > 每秒刮取样本数量(400) * 样本数据块block的时间(7200s) * 每条样本16 bytes ≈ 43MB
->
-> 这里得到的43MB是Prometheus每秒刮取400个指标，存储12个小时所使用的内存用量，当然Prometheus本身也会使用一定的内存，这里是要一起规划进去的。
+> > 这里得到的43MB是Prometheus每秒刮取400个指标，存储12个小时所使用的内存用量，当然Prometheus本身也会使用一定的内存，这里是要一起规划进去的。
 
 <br/>
 

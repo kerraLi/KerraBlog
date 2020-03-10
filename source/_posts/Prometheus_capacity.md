@@ -27,24 +27,25 @@ categories:
 
 * 首先需要拿到Prometheus每一种Job平均收集的样本数量，可以通过以下Promql查看，这里截图以容器云平台Rancher为例：
 
->公式：<br/>
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avg(scrape_samples_scraped) by (job)  
->解释：
-> * scrape_samples_scraped 这个metrics代表Prometheus被刮取的样本数；
-> * avg即为平均数；
-> * by (job)是具有job标签;
+>公式：  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avg(scrape_samples_scraped) by (job)   
+>
+>解释：  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、scrape_samples_scraped 这个metrics代表Prometheus被刮取的样本数；  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、avg即为平均数；  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、by (job)是具有job标签;
 
 ![avater](https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Prometheus%E6%8C%87%E6%A0%87%E6%95%B0%E9%87%8F.jpg)
 
 <br/>
 
 * 拿到了每一种Job平均收集的样本数量后，如果每一个job都是相同的scrape_interval(刮取时间间隔)，那么简单的除以60就可以的得出每一个job每秒刮取的样本数量
-> 公式：<br/>
+> 公式：
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avg(scrape_samples_scraped) / 60
 > 
-> 解释：
-> * / 60 即为除以60秒，拿到每秒的平均数；
-> * 这里的结果可能有不满足1个样本的情况，这里取平均值；
+> 解释：  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、/60 即为除以60秒，拿到每秒的平均数；  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、这里的结果可能有不满足1个样本的情况，这里取平均值；
 
 ![avater](https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Prometheus_job%E6%AF%8F%E7%A7%92%E5%B9%B3%E5%9D%87.jpg)
 
@@ -54,8 +55,9 @@ categories:
 
 > 公式:  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum(scrape_samples_scraped) / 60  
-> 解释:
-> * sum 即为计算总数函数；
+>
+> 解释:  
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、sum 即为计算总数函数；
 
 ![avater](https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Prometheus%E6%AF%8F%E7%A7%92%E6%8B%89%E5%8F%96%E6%80%BB%E6%95%B0.jpg)
 

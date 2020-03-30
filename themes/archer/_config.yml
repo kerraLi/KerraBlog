@@ -74,7 +74,7 @@ comment:
   # Livere  site: https://livere.com/
   livere_uid: 
   # Disqus  site: https://disqus.com/
-  disqus_shortname: 
+  disqus_shortname: https://zknow.disqus.com/
   # Gitment  site: https://github.com/imsun/gitment
   gitment_owner: 
   gitment_repo: 

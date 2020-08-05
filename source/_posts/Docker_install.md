@@ -10,7 +10,7 @@ categories:
 ---
 
 # 文章内容结构
-![avater](https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Docker%E9%83%A8%E7%BD%B2/Docker%20install.png)
+![avater](https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/zknow_blog/docker_install/Docker%E9%83%A8%E7%BD%B2.png)
 
 <br/>
 

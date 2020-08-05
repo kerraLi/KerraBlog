@@ -179,7 +179,7 @@ $ sudo docker run hello-world
 
 ### 使用rpm部署
 
-* 进入下面链接下载deb安装包
+* 进入下面链接下载rpm安装包
 >*  https://download.docker.com/linux/centos/7/x86_64/stable/Packages/ 
 
 * 安装deb包
@@ -231,6 +231,103 @@ $ sudo usermod -aG docker your-user
 命令：
 $ wget -O - "https://releases.rancher.com/install-docker/19.03.sh" | sudo bash –
 ```
+
+---
+
+
+---
+##  通用二进制部署Docker环境
+* 通过二进制包可以在离线环境上部署Docker环境
+
+### 1、下载、解压、赋权相关二进制
+```
+命令：
+wget https://download.docker.com/linux/static/stable/x86_64/docker-18.09.9.tgz ##下载二进制包，版本可自行修改
+
+tar -xvf docker-18.09.9.tgz  ##解压缩二进制包
+chmod +x docker/*   ##给可执行权限
+cp docker/* /usr/bin/  ##复制到/usr/bin
+```
+
+### 2、添加 docker 组
+```
+命令：
+groupadd docker
+```
+
+### 3、配置 service 
+```
+echo "[Unit]
+Description=Docker Application Container Engine
+Documentation=https://docs.docker.com
+BindsTo=containerd.service
+After=network-online.target firewalld.service containerd.service
+Wants=network-online.target
+Requires=docker.socket
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+ExecReload=/bin/kill -s HUP $MAINPID
+TimeoutSec=0
+RestartSec=2
+Restart=always
+StartLimitBurst=3
+StartLimitInterval=60s
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+TasksMax=infinity
+Delegate=yes
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target" > /usr/lib/systemd/system/docker.service
+
+echo "[Unit]
+Description=containerd container runtime
+Documentation=https://containerd.io
+After=network.target
+
+[Service]
+ExecStartPre=-/sbin/modprobe overlay
+ExecStart=/usr/bin/containerd
+KillMode=process
+Delegate=yes
+LimitNOFILE=1048576
+LimitNPROC=infinity
+LimitCORE=infinity
+TasksMax=infinity
+
+[Install]
+WantedBy=multi-user.target" > /usr/lib/systemd/system/containerd.service
+
+echo "[Unit]
+Description=Docker Socket for the API
+PartOf=docker.service
+
+[Socket]
+ListenStream=/var/run/docker.sock
+SocketMode=0660
+SocketUser=root
+SocketGroup=docker
+
+[Install]
+WantedBy=sockets.target" > /usr/lib/systemd/system/docker.socket
+
+```
+
+### 4、配置相关服务开机启动
+```
+命令：
+systemctl enable docker.socket containerd.service docker.service
+```
+
+### 5、启动 docker 进程并重启系统
+```
+reboot ##reboot原因：Systemd接管Docker服务，如果不重启可以运行dockerd运行
+```
+
 
 ---
 # Docker ee版本(预览订阅)

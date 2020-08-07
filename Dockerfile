@@ -1,4 +1,4 @@
-FROM zz535875999/zknow/ubuntu-nodejs
+FROM zz535875999/zknow:v0.1
 
 LABEL maintainer="zhen(535875999@qq.com)"
 

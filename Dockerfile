@@ -2,9 +2,12 @@ FROM zz535875999/zknow:v0.1
 
 LABEL maintainer="zhen(535875999@qq.com)"
 
-COPY ./zknow /opt/
+WORKDIR /opt/zknow
 
-RUN cd /opt/zknow && npm install -g
+COPY ./zknow /opt/zknow
+
+RUN cd /opt/zknow 
+RUN npm install -g
 
 EXPOSE 4000
 

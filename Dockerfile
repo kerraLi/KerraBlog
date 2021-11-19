@@ -4,9 +4,9 @@ LABEL maintainer="zhen(535875999@qq.com)"
 
 ENV HEXO_SERVER_PORT=4000
 
-WORKDIR /opt/zknow
+WORKDIR /opt/KerraBlog
 
-COPY start.sh /opt/zknow/
+COPY start.sh /opt/KerraBlog/
 
 RUN chmod +X start.sh
 
@@ -32,8 +32,8 @@ RUN npm install hexo-cli -g \
     && npm i hexo-generator-json-content --save \
     && npm i --save hexo-wordcount
  
-RUN git clone https://github.com/MrYuanZhen/zknow_blog.git
+RUN git clone https://github.com/kerraLi/KerraBlog.git
 
-RUN cd zknow_blog/zknow && npm install -g 
+RUN cd KerraBlog/KerraBlog && npm install -g 
 
 CMD [ "/bin/bash","start.sh" ]

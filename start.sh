@@ -1,3 +1,3 @@
 #/bin/bash
 
-cd /opt/zknow/zknow_blog/zknow/ && hexo server
+cd /opt/KerraBlog/KerraBlog/KerraBlog && hexo server

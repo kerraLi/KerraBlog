@@ -71,7 +71,7 @@ metadata:
   namespace: blog
 spec:
   rules:
-  - host: www.zknow.top
+  - host: www.kerra.top
     http:
       paths:
       - backend:
@@ -80,9 +80,9 @@ spec:
         pathType: ImplementationSpecific
   tls:
   - hosts:
-    - www.zknow.top
-    - zknow.top
-    secretName: "zhen-blog"
+    - www.kerra.top
+    - kerra.top
+    secretName: "kerra-blog"
 ---
 
 apiVersion: v1

@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Kerra Blog
 subtitle: ''
 description: ''
 keywords:
-author: 老袁
-language: cn
+author: Kerra
+language: en
 timezone: ''
 
 # URL
@@ -93,7 +93,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: archer
+theme: mdui
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

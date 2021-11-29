@@ -1,7 +1,8 @@
 ---
-title: 老袁的自述
+title: 关于我这个平凡的人
 layout: about
 date: 2020-03-09 21:28:46
+thumbnail: https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/zknow_blog/About_Content.jpg
 ---
 
 ---

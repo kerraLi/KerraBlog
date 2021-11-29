@@ -8,6 +8,7 @@ tags:
 - Logging
 categories:
 - Rancher
+thumbnail: https://zknow-1256858200.cos.ap-guangzhou.myqcloud.com/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Logging/Logging001.jpg
 ---
 
 # 概述

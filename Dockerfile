@@ -31,9 +31,10 @@ RUN npm install hexo-cli -g \
     && npm i hexo -g \
     && npm i hexo-generator-json-content --save \
     && npm i --save hexo-wordcount
+
  
 RUN git clone https://github.com/kerraLi/KerraBlog.git
 
-RUN cd KerraBlog/KerraBlog && npm install -g 
+RUN cd KerraBlog/KerraBlog && npm install -g && npm install prismjs node-sass-magic-importer node-sass node-prismjs --save
 
 CMD [ "/bin/bash","start.sh" ]

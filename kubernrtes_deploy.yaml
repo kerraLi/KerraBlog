@@ -61,7 +61,24 @@ spec:
 
 ---
 
-apiVersion: networking.k8s.io/v1
+apiVersion: v1
+kind: Service
+metadata:
+  name: kerrablog-svc
+  namespace: blog
+spec:
+  ports:
+  - port: 4000
+    protocol: TCP
+    targetPort: 4000
+  selector:
+    app: kerra-blog
+  sessionAffinity: None
+  type: ClusterIP
+
+---
+
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
@@ -83,19 +100,3 @@ spec:
     - www.kerra.top
     - kerra.top
     secretName: "kerra-blog"
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: kerrablog-svc
-  namespace: blog
-spec:
-  ports:
-  - port: 4000
-    protocol: TCP
-    targetPort: 4000
-  selector:
-    app: kerra-blog
-  sessionAffinity: None
-  type: ClusterIP

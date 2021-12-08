@@ -1,0 +1,123 @@
+# Theme config
+router: true
+
+style:
+  primary_color: "brown"
+  accent_color: "red"
+  bg_color: "#eeeeee"
+  hoverable: true
+
+info:
+  bg_image: /images/bg.png
+  avatar: /images/avatar_kerra.jpeg
+  slogan: "All About Kerra's."
+  sns:
+    Twitter:
+      link: https://twitter.com
+      fa: 'fa-twitter'
+    Facebook:
+      link: https://facebook.com
+      null_icon: true
+
+# HTML head
+head:
+  favicon: /images/favicon.png
+  high_res_favicon: /images/favicon.png
+  apple_touch_icon: /images/favicon.png
+  keywords: kerra, blog, java
+
+# Search
+search: true
+
+# Post
+post:
+  entry_excerpt: 80
+  random_pics: 44
+  qr_code: true
+  prism:
+    theme: darcula
+    line_number: true
+  license:
+    name: 'CC BY-NC-SA 4.0'
+    link: 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'
+  word_count: false
+  read_time: false
+  donate:
+    wechat:
+      link: /img/avatar.png
+      fa: 'fa-wechat'
+    paypay:
+      link: 'https://paypal.com'
+      fa: 'fa-paypal'
+
+share_menu:
+  rss: false
+  weibo: false
+  twitter: true
+  facebook: true
+  googleplus: true
+  linkedin: true
+  qq: false
+  telegram: false
+
+pages:
+  About Me:
+    link: '/about'
+    type: 'internal'
+    md: "&#xe0ba;"
+  Friends:
+    link: "/friends"
+    type: 'internal'
+    fa: 'fa-users'
+#  Test2:
+#    link: "/apply-for-link"
+#    type: 'internal'
+#    fa: "fa-child"
+#  Test3:
+#    link: "/galleries"
+#    type: 'internal'
+#    md: "home"
+#  Test4:
+#    cascade: true
+#    md: 'home'
+#    pages:
+#      TEST1:
+#        link: "/myfriends"
+#        type: 'internal'
+#        md: "&#xe5ca;"
+#      TEST2:
+#        link: "/timeline"
+#        type: 'internal'
+#        md: "home"
+
+# comment
+comment:
+  use: disqus
+  shortname: kerra
+
+# footer
+footer:
+  since: 2016
+  ICP:
+  image:
+  last_updated: true
+
+# Service Worker
+service_worker:
+
+# scss
+node_sass:
+  debug: false
+  outputStyle: compressed
+  precision: 5
+  sourceComments: false
+
+# Vendors
+vendors:
+  style_min_css:
+  outdatedbrowser_min_js:
+  js_min_js:
+  custom_head:
+  custom_js:
+
+debug: false

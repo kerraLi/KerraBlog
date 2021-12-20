@@ -1,4 +1,4 @@
-<div class="theme-drawer__header">
+<div class="theme-drawer__header" style="height:64px;">
   <div class="theme-drawer__header__layer-1">
     <div class="mdui-toolbar theme-toolbar-top">
       <% if (is_home()) { %>
@@ -15,13 +15,13 @@
         </a>
       <% } %>
     </div>
-    <div class="mdui-toolbar theme-toolbar-bottom">
+    <!--<div class="mdui-toolbar theme-toolbar-bottom">
       <span class="theme-toolbar-bottom__title"><%= config.title %></span>
-    </div>
+    </div>-->
   </div>
-  <div class="theme-drawer__header__layer-2" style="background-image: url(<%= url_for(theme.info.bg_image) %>)">
+  <div class="theme-drawer__header__layer-2" style="background-image: url(<%= url_for(theme.info.bg_image) %>);height:64px;">
     <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="<%= url_for(theme.info.avatar) %>"/>
-    <div class="theme-drawer__header__layer-2__user__info">
+    <div class="theme-drawer__header__layer-2__user__info" style="left:56px;">
       <div class="theme-drawer__header__layer-2__user__info__author mdui-text-color-white-text">
         <%= config.author %>
       </div>

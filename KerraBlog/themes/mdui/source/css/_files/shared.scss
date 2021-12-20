@@ -1,7 +1,8 @@
 // two toolbals
 $main-class: theme-toolbar;
 body {
-  padding-top: 128px;
+  // padding-top: 128px;
+  padding-top: 64px;
 }
 
 .#{$main-class}-top, & .#{$main-class}-bottom {
